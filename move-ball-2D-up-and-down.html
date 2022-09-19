@@ -1,0 +1,59 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+
+<script>
+// computer reads file establishes these variables
+var velocityx = 1;
+var velocityy = 1;
+var positionx = 0;
+var positiony = 0;
+var positionxmin = 0;
+var positionxmax = 500;
+var positionymin = 0;
+var positionymax = 300;
+var ball = document.getElementById('ball');
+var reverse_x = true;
+var reverse_y = true;
+var time = 1;
+// YOUR CODE 
+// ----------------
+
+function moveBall() {
+    if (reverse_x) {
+        positionx = positionx + velocityx;
+        ball.style.left = positionx + 'px';
+    } else {
+        positionx = positionx - velocityx;
+        ball.style.left = positionx + 'px';
+    }
+
+    if (reverse_y) {
+        positiony = positiony + velocityy;
+        ball.style.top = positiony + 'px';
+    } else {
+        positiony = positiony - velocityy;
+        ball.style.top = positiony + 'px';
+    }
+
+    if (positionx > positionxmax || 
+    positionx === positionxmin) {
+        reverse_x = !reverse_x;
+    }
+
+    if (positiony > positionymax || 
+        positiony === positionymin) {
+        reverse_y = !reverse_y;
+}
+}
+// sees function invocation setInterval and calls moveBall every 1 second
+setInterval(moveBall, time);
+
+</script>

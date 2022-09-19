@@ -1,0 +1,247 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+  z-index:4;
+  position:absolute;
+  left:100px;
+  top:40px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background: lightcoral"></div>
+
+<div id="ball3" style="
+  z-index:3;
+  position:absolute;
+  left:200px;
+  top:200px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:purple"></div>
+
+<div id="ball4" style="
+z-index:2;
+position:absolute;
+left:5px;
+top:400px;
+width:100px;
+height:100px;
+border-radius:50%;
+background:lightblue"></div>
+
+  
+
+<script>
+// var velocityX = 5;
+// var velocityX2 = 2;
+// var velocityX3 = 10;
+// var velocityX4 = 7;
+
+// var velocityY = 3;
+// var velocityY2 = 2;
+// var velocityY3 = 4;
+// var velocityY4 = 10;
+
+// var positionX = 0;
+// var positionX2 = 10;
+// var positionX3 = 0;
+// var positionX4 = 0;
+
+// var positionY = 0;
+// var positionY2 = 10;
+// var positionY3 = 0;
+// var positionY4 = 0;
+
+// var ball = document.getElementById('ball');
+// var ball2 = document.getElementById('ball2');
+// var ball3 = document.getElementById('ball3');
+// var ball4 = document.getElementById('ball4');
+
+// computer reads file establishes these variables
+var velocityx = 1;
+var velocityx2 = 2;
+var velocityx3 = 1;
+var velocityx4 = 1;
+
+var velocityy = 1;
+var velocityy2 = 1;
+var velocityy3 = 1;
+var velocityy4 = 1;
+
+var positionx = 0;
+var positionx2 = 10;
+var positionx3 = 0;
+var positionx4 = 0;
+
+var positiony = 0;
+var positiony2 = 10;
+var positiony3 = 8;
+var positiony4 = 9;
+
+var positionxmin = 0;
+var positionxmin2 = 10;
+var positionxmin3 = 0;
+var positionxmin4 = 0;
+
+var positionxmax = 500;
+var positionxmax2 = 1000;
+var positionxmax3 = 700;
+var positionxmax4 = 800;
+
+var positionymin = 0;
+var positionymin2 = 0;
+var positionymin3 = 0;
+var positionymin4 = 0;
+
+var positionymax = 300;
+var positionymax2 = 600;
+var positionymax3 = 600;
+var positionymax4 = 600;
+
+var ball = document.getElementById('ball');
+var ball2 = document.getElementById('ball2');
+var ball3 = document.getElementById('ball3');
+var ball4 = document.getElementById('ball4');
+
+var reverse_x = true;
+var reverse_x2 = true;
+var reverse_x3 = true;
+var reverse_x4 = true;
+
+var reverse_y = true;
+var reverse_y2 = true;
+var reverse_y3 = true;
+var reverse_y4 = true;
+
+var time = 1;
+
+// YOUR CODE 
+// ----------------
+
+function moveBall() {
+    if (reverse_x) {
+        positionx = positionx + velocityx;
+        ball.style.left = positionx + 'px';
+    } else {
+        positionx = positionx - velocityx;
+        ball.style.left = positionx + 'px';
+    }
+
+    if (reverse_y) {
+        positiony = positiony + velocityy;
+        ball.style.top = positiony + 'px';
+    } else {
+        positiony = positiony - velocityy;
+        ball.style.top = positiony + 'px';
+    }
+
+    if (positionx > positionxmax || 
+    positionx === positionxmin) {
+        reverse_x = !reverse_x;
+    }
+
+    if (positiony > positionymax || 
+        positiony === positionymin) {
+        reverse_y = !reverse_y;
+}
+}
+
+
+function moveBall2() {
+    if (reverse_x2) {
+        positionx2 = positionx2 + velocityx2;
+        ball2.style.left = positionx2 + 'px';
+    } else {
+        positionx2 = positionx2 - velocityx2;
+        ball2.style.left = positionx2 + 'px';
+    }
+
+    if (reverse_y2) {
+        positiony2 = positiony2 + velocityy2;
+        ball2.style.top = positiony2 + 'px';
+    } else {
+        positiony2 = positiony2 - velocityy2;
+        ball2.style.top = positiony2 + 'px';
+    }
+
+    if (positionx2 > positionxmax2 || 
+    positionx2 === positionxmin2) {
+        reverse_x2 = !reverse_x2;
+    }
+
+    if (positiony2 > positionymax2 || 
+        positiony2 === positionymin2) {
+        reverse_y2 = !reverse_y2;
+}
+}
+
+function moveBall3() {
+    if (reverse_x3) {
+        positionx3 = positionx3 + velocityx3;
+        ball3.style.left = positionx3 + 'px';
+    } else {
+        positionx3 = positionx3 - velocityx3;
+        ball3.style.left = positionx3 + 'px';
+    }
+
+    if (reverse_y3) {
+        positiony3 = positiony3 + velocityy3;
+        ball3.style.top = positiony3 + 'px';
+    } else {
+        positiony3 = positiony3 - velocityy3;
+        ball3.style.top = positiony3 + 'px';
+    }
+
+    if (positionx3 > positionxmax3 || 
+        positionx3 === positionxmin3) {
+        reverse_x3 = !reverse_x3;
+    }
+
+    if (positiony3 > positionymax3 || 
+        positiony3 === positionymin3) {
+        reverse_y3 = !reverse_y3;
+}
+}
+
+function moveBall4() {
+    if (reverse_x4) {
+        positionx4 = positionx4 + velocityx4;
+        ball4.style.left = positionx4 + 'px';
+    } else {
+        positionx4 = positionx4 - velocityx4;
+        ball4.style.left = positionx4 + 'px';
+    }
+
+    if (reverse_y4) {
+        positiony4 = positiony4 + velocityy4;
+        ball4.style.top = positiony4 + 'px';
+    } else {
+        positiony4 = positiony4 - velocityy4;
+        ball4.style.top = positiony4 + 'px';
+    }
+
+    if (positionx4 > positionxmax4 || 
+        positionx4 === positionxmin4) {
+        reverse_x4 = !reverse_x4;
+    }
+
+    if (positiony4 > positionymax4 || 
+        positiony4 === positionymin4) {
+        reverse_y4 = !reverse_y4;
+}
+}
+// sees function invocation setInterval and calls moveBall every 1 second
+setInterval(moveBall, time);
+setInterval(moveBall2, time);
+setInterval(moveBall3, time);
+setInterval(moveBall4, time);
+</script>
