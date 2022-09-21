@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="
+background: black">
+    
+
+<div id="rectangle" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width: 250px;
+  height:75px;
+  border-radius:0%;
+  background:blue;
+  color: black;
+  font-size: 170%;"><img src="download.jpg" alt="Samusung Logo" width="100%">
+  </div>
+
+
+<script>
+// computer reads file establishes these variables
+var velocityx = 1;
+var velocityy = 1;
+var positionx = 0;
+var positiony = 0;
+var positionxmin = 0;
+var positionxmax = 1050;
+var positionymin = 0;
+var positionymax = 600;
+var ball = document.getElementById('rectangle');
+var reverse_x = true;
+var reverse_y = true;
+var time = 1;
+// YOUR CODE 
+// ----------------
+
+function moveBall() {
+    if (reverse_x) {
+        positionx = positionx + velocityx;
+        ball.style.left = positionx + 'px';
+    } else {
+        positionx = positionx - velocityx;
+        ball.style.left = positionx + 'px';
+    }
+
+    if (reverse_y) {
+        positiony = positiony + velocityy;
+        ball.style.top = positiony + 'px';
+    } else {
+        positiony = positiony - velocityy;
+        ball.style.top = positiony + 'px';
+    }
+
+    if (positionx > positionxmax || 
+    positionx === positionxmin) {
+        reverse_x = !reverse_x;
+    }
+
+    if (positiony > positionymax || 
+        positiony === positionymin) {
+        reverse_y = !reverse_y;
+}
+}
+// sees function invocation setInterval and calls moveBall every 1 second
+setInterval(moveBall, time);
+
+</script>
+
+</body>
+</html>
